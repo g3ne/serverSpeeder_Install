@@ -2,8 +2,8 @@
 
 function Welcome()
 {
-clear
-echo -n "                      Local Time :   " && date "+%F [%T]       ";
+#clear
+#echo -n "                      Local Time :   " && date "+%F [%T]       ";
 #echo "            ======================================================";
 #echo "            |                    serverSpeeder                   |";
 #echo "            |                                         for Linux  |";
