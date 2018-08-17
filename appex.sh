@@ -96,7 +96,7 @@ rm -rf /etc/serverSpeeder.conf >/dev/null 2>&1
 rm -rf /appex >/dev/null 2>&1
 rm -rf /tmp/appex* >/dev/null 2>&1
 echo -ne 'serverSpeeder has been removed! \n\n\n'
-exit 0
+#exit 0
 }
 
 function dl-Lic()
@@ -127,9 +127,9 @@ sed -i "s/^accif\=.*/accif\=\"$Eth\"/" /tmp/appex/apxfiles/etc/config
 sed -i "s/^apxexe\=.*/apxexe\=\"\/appex\/bin\/$APXEXE\"/" /tmp/appex/apxfiles/etc/config
 }
 
-[ $# == '1' ] && [ "$1" == 'install' ] && KNK="$(uname -r)" && Install;
-[ $# == '1' ] && [ "$1" == 'uninstall' ] && Welcome && pause && Uninstall;
-[ $# == '2' ] && [ "$1" == 'install' ] && KNK="$2" && Install;
+[ $# == '1' ] && [ "$1" == 'install' ] && KNK="$(uname -r)" && Install && exit 1;
+[ $# == '1' ] && [ "$1" == 'uninstall' ] && Welcome && pause && Uninstall && exit 1;
+[ $# == '2' ] && [ "$1" == 'install' ] && KNK="$2" && Install && exit 1;
 echo -ne "Usage:\n     bash $0 [install |uninstall |install '{serverSpeeder of Kernel Version}']\n"
 
 
